@@ -3,6 +3,7 @@ phases:
   build:
     commands:
       - aws cloudformation package --template-file dice-roller-lambda.yaml --s3-bucket codepipeline-us-west-1-539436040857 --output-template-file sam-template.yaml
-  post_build:
-    commands:
-      - aws cloudformation deploy --template-file /codebuild/output/src510397215/src/sam-template.yaml --stack-name lambda-deploy
+artifacts:
+  type: zip
+  files:
+    - ./*
