@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs6.10
-      CodeUri: .
+      CodeUri: s3://codepipeline-us-west-1-539436040857/dice-roller-lambda.zip
       Description: ''
       MemorySize: 128
       Timeout: 10
