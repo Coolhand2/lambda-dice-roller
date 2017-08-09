@@ -2,7 +2,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - aws cloudformation package --template-file dice-roller-lambda.yml --s3-bucket codepipeline-us-west-1-539436040857 --output-template-file sam-template.yml
+      - aws cloudformation package --template-file dice-roller-lambda.yml --s3-bucket dice-roller --output-template-file sam-template.yml
 artifacts:
   type: zip
   files:
