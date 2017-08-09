@@ -21,8 +21,13 @@ paths:
         200:
           description: "200 response"
           schema:
-            $ref: "#/definitions/Empty"
+            $ref: "#/definitions/Dice"
 definitions:
+  Dice:
+    type: object
+      properties:
+        dice:
+          type: "string"
   Empty:
     type: "object"
     title: "Empty Schema"
