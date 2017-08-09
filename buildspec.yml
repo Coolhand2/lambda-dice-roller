@@ -2,8 +2,7 @@ version: 0.1
 phases:
   build:
     commands:
-      - aws cloudformation package --template-file dice-roller-lambda.yaml --s3-bucket codepipeline-us-west-1-539436040857 --output-template-file sam-template.yaml
-artifacts:
-  type: zip
-  files:
-    - ./*
+      - aws cloudformation package --template-file dice-roller-lambda.yml --s3-bucket codepipeline-us-west-1-539436040857 --output-template-file sam-template.yml
+  post_build:
+    commands:
+      - aws cloudformation deploy -template-file sam-template.yml --stack-name dice-roller-stack --capabilities CAPABILITY_IAM
