@@ -5,4 +5,4 @@ phases:
       - aws cloudformation package --template-file dice-roller-lambda.yml --s3-bucket codepipeline-us-west-1-539436040857 --output-template-file sam-template.yml
   post_build:
     commands:
-      - aws cloudformation deploy -template-file sam-template.yml --stack-name dice-roller-stack --capabilities CAPABILITY_IAM
+      - aws cloudformation deploy --template-file sam-template.yml --stack-name dice-roller-stack --capabilities CAPABILITY_IAM
