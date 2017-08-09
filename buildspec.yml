@@ -6,3 +6,8 @@ phases:
   post_build:
     commands:
       - aws cloudformation deploy --template-file sam-template.yml --stack-name dice-roller-stack --capabilities CAPABILITY_IAM
+artifacts:
+  type: zip
+  files:
+    - ./*
+  
