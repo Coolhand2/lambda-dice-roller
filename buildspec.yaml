@@ -1,0 +1,9 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - aws cloudformation package --template-file dice-roller-lambda.yaml --output-template-file sam-template.yaml
+artifacts:
+  type: zip
+  files:
+    - ./*

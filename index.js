@@ -1,12 +1,11 @@
 'use strict';
 
-var util = require("util");
-
 exports.handler = (event, context, callback) => {
     var die = event.pathParameters.dice.split(',');
     var total = 0;
     die.forEach((_dice) => {
         var _array = /(\d+)d(\d+)(([\+\-])(\d+))?/g.exec(_dice);
+        console.log(_array);
         var _count = parseInt(_array[1]);
         var _sides = parseInt(_array[2]);
         var _mod = _array[3];

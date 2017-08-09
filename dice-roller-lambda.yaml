@@ -1,0 +1,20 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  dicerollerlambda:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs6.10
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 10
+      Role: 'arn:aws:iam::314749681433:role/apigateway-logs'
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-edbb7b89
+        SubnetIds:
+          - subnet-ed5e6988
+          - subnet-2bb0c472
