@@ -21,13 +21,17 @@ paths:
         200:
           description: "200 response"
           schema:
-            $ref: "#/definitions/Dice"
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+        uri: "arn:aws:apigateway:us-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-1:314749681433:function:dice-roller-stack*/invocations"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws_proxy"
 definitions:
-  Dice:
-    type: object
-      properties:
-        dice:
-          type: "string"
   Empty:
     type: "object"
     title: "Empty Schema"
