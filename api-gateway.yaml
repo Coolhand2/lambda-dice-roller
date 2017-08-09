@@ -1,0 +1,28 @@
+---
+swagger: "2.0"
+info:
+  version: "2017-08-09T02:06:01Z"
+  title: "dicer"
+host: "79v1x086aj.execute-api.us-west-1.amazonaws.com"
+basePath: "/prod"
+schemes:
+- "https"
+paths:
+  /roll/{dice}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "dice"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"

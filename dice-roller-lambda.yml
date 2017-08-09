@@ -2,6 +2,11 @@
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 Resources:
+  dicerollerapi:
+    Type: 'AWS::Serverless::Api'
+    Properties:
+      StageName: 'prod'
+      DefinitionUri: 'api-gateway.yaml'
   dicerollerlambda:
     Type: 'AWS::Serverless::Function'
     Properties:
